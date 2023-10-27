@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
   
     @IBOutlet weak var imageView2: UIImageView!
+    var diceNumber = 0
+    var second = 0
     
     
     override func viewDidLoad() {
@@ -28,10 +30,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func RollDice(_ sender: Any) {
-        imageView1.image = #imageLiteral(resourceName: "DiceFour")
-        //WHO      WHAT     VALUE
-        imageView2.image = #imageLiteral(resourceName: "DiceFour")
+//        imageView1.image = #imageLiteral(resourceName: "DiceSix")
+//        //WHO      WHAT     VALUE
+//        imageView2.image = #imageLiteral(resourceName: "DiceFour")
          
+        imageView1.image = [ #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")] [diceNumber]
+        imageView2.image = [ #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")] [second]
+        
+        diceNumber =  Int.random(in: 0...5)
+        second = Int.random(in: 0...5)
+        
          imageView1.alpha = 1
         
         
